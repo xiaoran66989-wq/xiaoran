@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101014">
+<meta name="description" content="幕光影廊｜电影解说、影评与故事推荐">
+<title>幕光影廊｜电影解说</title>
+<style>
+:root{color-scheme:dark;--bg:#101014;--panel:#19191f;--muted:#a5a4ae;--text:#f5f3f7;--gold:#e4b86a;--line:#ffffff16}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.6 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}a{color:inherit;text-decoration:none}button,input{font:inherit}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+header{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:11px;font-size:20px;font-weight:750;letter-spacing:1px}.brand-mark{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:linear-gradient(145deg,#f2d79f,#b27835);color:#17130d;font-size:20px}.nav{display:flex;gap:26px;color:#c9c7cf}.nav a:hover,.nav a.active{color:var(--gold)}.search{position:relative}.search input{width:205px;background:#ffffff0b;border:1px solid var(--line);border-radius:22px;padding:10px 15px 10px 38px;color:white;outline:none}.search:before{content:"⌕";position:absolute;left:14px;top:4px;font-size:23px;color:var(--muted)}
+.hero{margin:26px 0 42px;min-height:390px;border:1px solid #ffffff14;border-radius:22px;overflow:hidden;position:relative;display:flex;align-items:center;background:radial-gradient(ellipse at 75% 45%,#9e75533a,transparent 35%),linear-gradient(110deg,#1b1a22 0%,#29242c 48%,#111116 100%)}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#121217 3%,#121217e8 36%,#12121755 70%,#12121720),radial-gradient(ellipse at 80% 85%,#d7a04b20,transparent 50%);pointer-events:none}.hero-art{position:absolute;right:4%;top:7%;width:38%;height:86%;border-radius:48% 48% 7px 7px;background:linear-gradient(150deg,#d7ae7440,#4f3741a8 45%,#17151b 78%);box-shadow:inset 0 0 60px #0008,0 20px 80px #0008;transform:skewY(-2deg)}.hero-art:before{content:"";position:absolute;left:34%;top:12%;width:36%;height:50%;border-radius:50% 50% 38% 38%;background:linear-gradient(150deg,#d9b98b,#4b3940 72%);filter:drop-shadow(0 20px 25px #0009)}.hero-art:after{content:"";position:absolute;left:4%;right:4%;bottom:-1px;height:42%;border-radius:50% 50% 0 0;background:linear-gradient(100deg,#18141b,#5b423e 48%,#19151b)}.hero-copy{position:relative;z-index:1;max-width:590px;padding:48px 58px}.eyebrow{color:var(--gold);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase}.hero h1{font-size:clamp(34px,5vw,56px);line-height:1.15;margin:14px 0 13px;letter-spacing:2px}.hero p{color:#c7c3c8;max-width:520px;margin:0 0 20px}.meta{color:#a9a5ad;font-size:13px;display:flex;gap:14px;align-items:center}.tag{border:1px solid #ffffff29;border-radius:20px;padding:3px 10px}.actions{display:flex;gap:12px;margin-top:27px}.btn{border:0;cursor:pointer;border-radius:24px;padding:11px 20px;font-weight:700}.btn-primary{background:var(--gold);color:#1c1710}.btn-quiet{background:#ffffff13;color:#f3eff4;border:1px solid #ffffff20}
+section{padding:0 0 48px}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:18px}.section-head h2{font-size:23px;margin:0}.section-head p{margin:5px 0 0;color:var(--muted);font-size:13px}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}.filter{cursor:pointer;color:#c5c2cb;background:#ffffff0a;border:1px solid var(--line);border-radius:18px;padding:7px 14px}.filter.selected{background:#e4b86a20;border-color:#e4b86a77;color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:var(--panel);border:1px solid var(--line);border-radius:15px;overflow:hidden;transition:transform .2s,border-color .2s}.card:hover{transform:translateY(-4px);border-color:#e4b86a55}.poster{height:220px;position:relative;display:flex;align-items:end;padding:15px;background:var(--poster,linear-gradient(145deg,#634f58,#22212a 62%,#141419));overflow:hidden}.poster:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#101014dc,transparent 70%)}.poster:after{content:"";position:absolute;width:145px;height:190px;right:4%;top:-15px;border-radius:50% 50% 8px 8px;background:linear-gradient(140deg,#ffffff22,#00000005);transform:rotate(13deg);filter:blur(1px)}.poster-title{position:relative;z-index:1;font-size:23px;font-weight:800;text-shadow:0 2px 12px #000}.card-body{padding:14px 15px 16px}.card h3{font-size:16px;margin:0 0 5px}.card p{color:var(--muted);font-size:13px;margin:0;min-height:42px}.card-foot{display:flex;justify-content:space-between;align-items:center;margin-top:13px;color:#aaa6af;font-size:12px}.watch{background:none;border:0;color:var(--gold);cursor:pointer;padding:0}
+.empty{grid-column:1/-1;padding:42px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:14px}
+footer{border-top:1px solid var(--line);padding:24px 0;color:#88858f;font-size:12px}footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.modal{position:fixed;inset:0;z-index:5;display:none;place-items:center;padding:20px;background:#000b}.modal.show{display:grid}.dialog{width:min(760px,100%);background:#1b1a20;border:1px solid #ffffff20;border-radius:18px;overflow:hidden;box-shadow:0 25px 100px #0009}.dialog-top{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)}.dialog-top h3{margin:0;font-size:18px}.close{background:none;border:0;color:#ddd;font-size:24px;cursor:pointer}.player{aspect-ratio:16/9;background:#08080a;display:grid;place-items:center;color:#aaa;text-align:center;padding:25px}.player iframe,.player video{width:100%;height:100%;border:0}.dialog-desc{padding:18px 20px;color:#c4c0c9}.dialog-desc p{margin:6px 0}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.hero-copy{padding:42px}.hero-art{right:-5%;width:45%;opacity:.7}.nav{gap:14px}}
+@media(max-width:620px){.wrap{width:min(100% - 28px,1180px)}header{height:auto;min-height:68px;flex-wrap:wrap;padding:12px 0;gap:12px}.brand{font-size:18px}.nav{order:3;width:100%;overflow:auto;padding:4px 0}.search input{width:150px}.hero{min-height:380px;margin-top:18px}.hero-copy{padding:30px 24px}.hero-art{right:-25%;width:75%;opacity:.48}.hero:after{background:linear-gradient(90deg,#121217ee,#121217aa 75%,#12121766)}.grid{gap:12px}.poster{height:175px}.card-body{padding:12px}.card p{min-height:60px}.section-head{align-items:start;flex-direction:column}.hero h1{font-size:38px}}
+</style>
+</head>
+<body>
+<header class="wrap">
+<a class="brand" href="#"><span class="brand-mark">幕</span><span>幕光影廊</span></a>
+<nav class="nav" aria-label="主导航"><a class="active" href="#home">首页</a><a href="#collection">电影解说</a><a href="#about">关于我们</a></nav>
+<label class="search"><input id="search" type="search" placeholder="搜索片名或关键词" aria-label="搜索电影"></label>
+</header>
+<main class="wrap">
+<section class="hero" id="home">
+<div class="hero-art" aria-hidden="true"></div>
+<div class="hero-copy"><div class="eyebrow">本周精选 · FEATURED STORY</div><h1>心中之城</h1>
+<div class="meta"><span>电影解说</span><span>·</span><span>关于记忆与归途</span><span class="tag">精选</span></div>
+<p>一座熟悉又陌生的城市，一段迟迟没有说出口的告别。当主角重新踏上回家的路，才发现真正需要找回的，也许一直藏在自己的心里。</p>
+<div class="actions"><button class="btn btn-primary" onclick="openMovie('city')">▶ 观看解说</button><a class="btn btn-quiet" href="#collection">浏览影片</a></div></div>
+</section>
+<section id="collection">
+<div class="section-head"><div><h2>电影解说</h2><p>用几分钟，走进一个完整的故事</p></div><span class="meta" id="count"></span></div>
+<div class="filters" id="filters"><button class="filter selected" data-cat="全部">全部</button><button class="filter" data-cat="悬疑">悬疑</button><button class="filter" data-cat="剧情">剧情</button><button class="filter" data-cat="科幻">科幻</button><button class="filter" data-cat="治愈">治愈</button></div>
+<div class="grid" id="grid"></div>
+</section>
+<section id="about"><div class="section-head"><div><h2>关于幕光影廊</h2><p>认真讲故事，也尊重每一部作品。</p></div></div><p style="max-width:720px;color:var(--muted)">这里收录电影解说、剧情梳理与观影笔记。本站展示的内容请替换为你拥有版权或已获授权的视频；可在下方影片数据中填写合法的视频嵌入地址。</p></section>
+</main>
+<footer><div class="wrap"><span>© 2026 幕光影廊 · 电影故事与解说</span><span>视频内容由站点运营者提供，请确保已获得发布授权。</span></div></footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onclick="if(event.target===this)closeMovie()"><div class="dialog"><div class="dialog-top"><h3 id="modal-title"></h3><button class="close" aria-label="关闭" onclick="closeMovie()">×</button></div><div class="player" id="player"></div><div class="dialog-desc" id="description"></div></div></div>
+<script>
+const movies=[
+{id:"city",title:"心中之城",category:"剧情",year:"2026",length:"解说 · 8分钟",desc:"在熟悉的街道里寻找回家的方向。一段关于成长、记忆和重新出发的故事。",videoUrl:"",colors:"linear-gradient(145deg,#a87554,#513947 56%,#17171e)"},
+{id:"last-train",title:"末班列车",category:"悬疑",year:"2025",length:"解说 · 12分钟",desc:"深夜列车上，乘客们各自隐瞒着一个秘密。",videoUrl:"",colors:"linear-gradient(145deg,#54717d,#303341 56%,#15151c)"},
+{id:"blue-hour",title:"蓝色时刻",category:"治愈",year:"2024",length:"解说 · 9分钟",desc:"一次偶然的相遇，让两个迷路的人重新看见生活。",videoUrl:"",colors:"linear-gradient(145deg,#7593ab,#4d5370 56%,#171821)"},
+{id:"echo",title:"回声档案",category:"科幻",year:"2025",length:"解说 · 11分钟",desc:"当记忆能够被保存，遗忘还算不算一种自由？",videoUrl:"",colors:"linear-gradient(145deg,#856e9b,#3d3c67 56%,#15151d)"},
+{id:"north-window",title:"北窗以北",category:"剧情",year:"2023",length:"解说 · 7分钟",desc:"一封迟到多年的信，打开了家人之间没有说完的话。",videoUrl:"",colors:"linear-gradient(145deg,#9a795c,#58443c 56%,#161519)"},
+{id:"silent-room",title:"无声房间",category:"悬疑",year:"2024",length:"解说 · 10分钟",desc:"一间没有出口的房间，和一段被所有人否认的往事。",videoUrl:"",colors:"linear-gradient(145deg,#75716c,#383840 56%,#141419)"},
+{id:"small-light",title:"小小的光",category:"治愈",year:"2022",length:"解说 · 6分钟",desc:"平凡日子里的一点善意，照亮了漫长的冬天。",videoUrl:"",colors:"linear-gradient(145deg,#c2945e,#79534a 56%,#1a1718)"},
+{id:"orbit",title:"失重边界",category:"科幻",year:"2025",length:"解说 · 13分钟",desc:"远航归来的人发现，地球上的时间已经先走了一步。",videoUrl:"",colors:"linear-gradient(145deg,#536e8f,#343454 56%,#10131b)"}
+];
+let activeCat="全部";
+const grid=document.getElementById("grid"), search=document.getElementById("search");
+function render(){const q=search.value.trim().toLowerCase();const shown=movies.filter(m=>(activeCat==="全部"||m.category===activeCat)&&(m.title+m.category+m.desc).toLowerCase().includes(q));document.getElementById("count").textContent="共 "+shown.length+" 部";grid.innerHTML=shown.length?shown.map(m=>'<article class="card"><div class="poster" style="--poster:'+m.colors+'"><div class="poster-title">'+m.title+'</div></div><div class="card-body"><h3>'+m.title+'</h3><p>'+m.desc+'</p><div class="card-foot"><span>'+m.category+' · '+m.year+'</span><button class="watch" onclick="openMovie(\''+m.id+'\')">查看解说 →</button></div></div></article>').join(""):'<div class="empty">没有找到相关影片，试试其他关键词。</div>'}
+document.getElementById("filters").addEventListener("click",e=>{const b=e.target.closest("button[data-cat]");if(!b)return;activeCat=b.dataset.cat;document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("selected",x===b));render()});
+search.addEventListener("input",render);
+function openMovie(id){const m=movies.find(x=>x.id===id);if(!m)return;document.getElementById("modal-title").textContent=m.title+"｜电影解说";document.getElementById("description").innerHTML='<strong>'+m.category+' · '+m.year+' · '+m.length+'</strong><p>'+m.desc+'</p>';const p=document.getElementById("player");p.innerHTML=m.videoUrl?'<iframe src="'+m.videoUrl+'" title="'+m.title+'视频播放" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>':'<div>▶<br><br>该影片的视频地址尚未添加<br><small>在 index.html 的 movies 列表中填写授权视频的 videoUrl 即可播放</small></div>';document.getElementById("modal").classList.add("show");document.body.style.overflow="hidden"}
+function closeMovie(){document.getElementById("modal").classList.remove("show");document.body.style.overflow=""}
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeMovie()});render();
+</script>
+</body>
+</html>
